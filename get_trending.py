@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-def get_trending_repositories():
+def get_trending_repos():
     url_to_call = "https://github.com/trending"
 
     response = requests.get(url_to_call, headers={'User-Agent': 'Mozilla/5.0'})
@@ -18,7 +18,3 @@ def get_trending_repositories():
                 "link": "https://github.com{}".format(href_link)}
         trending_repositories.append(repo)
     return trending_repositories
-
-
-if __name__ == "__main__":
-    trending_repos = get_trending_repositories()
