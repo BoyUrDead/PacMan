@@ -1,4 +1,0 @@
-User Options:
-    1. View the database.
-    2. Check for eligibility.
-    3. Install package.

@@ -1,13 +1,14 @@
-import imports
-db= imports.mysql.connector.connect(host='localhost', user='root', password='admin', database='pacman')
+import mysql.connector
+
+db= mysql.connector.connect(host='localhost', user='root', password='none', database='pacman')
 c=db.cursor()
-def view():
+def get_data():
     run="select * from packages;"
     c.execute(run)
     data=c.fetchall()
+    return data
+
+def view():
+    data = get_data()
     for i in data:
-        return i
-    if i[1] == 'Eterm':
-        print("OK")
-    else:
-        print("NO")
+        print(i[0])
